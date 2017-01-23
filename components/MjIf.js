@@ -22,18 +22,11 @@ const defaultMJMLDefinition = {
 @MJMLElement
 class MjIf extends Component {
   render () {
-    // const { mjAttribute } = this.props;
-    // const condition = mjAttribute('condition');
     const { mjAttribute } = this.props;
     const condition = mjAttribute('condition');
-    console.log(condition);
-    const parsed = JSON.parse(condition);
-    console.log(parsed);
-
-    console.log(this.props.children);
     return (
         <div>
-            { parsed.name ? this.props.children : null}
+            { condition ? this.props.children : null}
         </div>
     )
 

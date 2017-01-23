@@ -2,17 +2,20 @@ var mjml = require('mjml');
 var fs = require('fs');
 
 let canIGetThis = JSON.stringify({name:"butts"});
-
+let eachArr = ['hello', 'jim', 'bob'];
 const customMJML = `<mjml>
   <mj-body>
       <mj-container>
        <mj-section>
           <mj-column>
-              <mj-if condition=${canIGetThis}>
+              <mj-if condition=${canIGetThis.name}>
                 <mj-text color="blue" font-size="10px">
                     wrapped in a mj-if
                 </mj-text>
               </mj-if>
+              <mj-for each=${eachArr}>
+                  <mj-text color="blue" font-size="10px"> hello </mj-text>
+              </mj-for>
           </mj-column>
         </mj-section>
     </mj-container>
